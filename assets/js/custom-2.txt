@@ -1,0 +1,56 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // تعريف البيانات الخاصة بالمنتج
+    const productData = {
+        title: "Active Wear",
+        price: "$25.00",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        images: [
+            "assets/img/product_single_01.jpg",
+            "assets/img/product_single_02.jpg",
+            "assets/img/product_single_03.jpg",
+            "assets/img/product_single_04.jpg",
+            "assets/img/product_single_05.jpg"
+        ],
+        sizes: ["S", "M", "L", "XL"],
+        brand: "Easy Wear",
+        colors: ["White", "Black"]
+    };
+
+    // تحديث الصور في صفحة تفاصيل المنتج
+    const mainImage = document.getElementById('product-detail');
+    const imageLinks = document.querySelectorAll('.carousel-item img');
+
+    mainImage.src = productData.images[0]; // تحديث الصورة الرئيسية
+
+    // تحديث الصور في الكاروسيل
+    imageLinks.forEach((img, index) => {
+        img.src = productData.images[index] || '';
+    });
+
+    // تحديث الوصف والعنوان والسعر
+    document.querySelector('.h1').textContent = productData.title;
+    document.querySelector('.h3.py-2').textContent = productData.price;
+    document.querySelector('.py-2').textContent = productData.description;
+
+    // تحديث الحجم
+    const sizeList = document.querySelector('.btn-size');
+    productData.sizes.forEach(size => {
+        const sizeBtn = document.createElement('span');
+        sizeBtn.classList.add('btn', 'btn-success', 'btn-size');
+        sizeBtn.textContent = size;
+        sizeList.appendChild(sizeBtn);
+    });
+
+    // تحديث اللون
+    const colorList = document.querySelector('.list-inline');
+    productData.colors.forEach(color => {
+        const colorItem = document.createElement('span');
+        colorItem.classList.add('btn', 'btn-success', 'btn-color');
+        colorItem.textContent = color;
+        colorList.appendChild(colorItem);
+    });
+
+    // تحديث معلومات أخرى مثل الماركة
+    const brandElement = document.querySelector('.list-inline-item');
+    brandElement.textContent = productData.brand;
+});
