@@ -37,6 +37,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 'مريح للارتداء طوال اليوم',
                 'مناسب للأنشطة الرياضية'
             ]
+        },
+        {
+            id: 3,
+            name: ' مافيش كهرباء ',
+            description: 'متوفر بمقاسات M/L/XL',
+            price: 1500,
+            image: 'assets/img/1.png',
+            colors: ['One Color'],
+            rating: 4,
+            images: [
+                'assets/img/product_single_01.jpg',
+                'assets/img/product_single_02.jpg',
+                'assets/img/product_single_03.jpg'
+            ],
+            additionalDetails: [
+                'خامة قطنية ممتازة',
+                'مريح للارتداء طوال اليوم',
+                'مناسب للأنشطة الرياضية'
+            ]
         }
 
     ];
